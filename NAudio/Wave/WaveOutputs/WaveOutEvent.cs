@@ -87,7 +87,7 @@ namespace NAudio.Wave
             callbackEvent = new AutoResetEvent(false);
 
             waveStream = waveProvider;
-            int bufferSize = waveProvider.WaveFormat.ConvertLatencyToByteSize((DesiredLatency + NumberOfBuffers - 1) / NumberOfBuffers);            
+            int bufferSize = waveProvider.WaveFormat.ConvertLatencyToByteSize((DesiredLatency + NumberOfBuffers - 1) / NumberOfBuffers);
 
             MmResult result;
             lock (waveOutLock)
@@ -156,8 +156,8 @@ namespace NAudio.Wave
                         Debug.WriteLine("WARNING: WaveOutEvent callback event timeout");
                     }
                 }
-                    
-                
+
+
                 // requeue any buffers returned to us
                 if (playbackState == PlaybackState.Playing)
                 {
@@ -286,11 +286,7 @@ namespace NAudio.Wave
         public float Volume
         {
             get { return volume; }
-            set
-            {
-                WaveOut.SetWaveOutVolume(value, hWaveOut, waveOutLock);
-                volume = value;
-            }
+            set { volume = value; }
         }
 
         #region Dispose Pattern
@@ -332,7 +328,7 @@ namespace NAudio.Wave
                 if (hWaveOut != IntPtr.Zero)
                 {
                     WaveInterop.waveOutClose(hWaveOut);
-                    hWaveOut= IntPtr.Zero;
+                    hWaveOut = IntPtr.Zero;
                 }
             }
         }

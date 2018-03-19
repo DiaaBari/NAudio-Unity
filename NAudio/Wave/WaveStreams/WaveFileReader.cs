@@ -3,6 +3,8 @@ using System.IO;
 using System.Collections.Generic;
 using NAudio.FileFormats.Wav;
 
+using NAudio.Utils;
+
 namespace NAudio.Wave 
 {
     /// <summary>This class supports the reading of WAV files,

@@ -3,6 +3,8 @@ using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 
+using NAudio.Utils;
+
 // ReSharper disable once CheckNamespace
 namespace NAudio.Wave
 {

@@ -2,6 +2,8 @@ using System;
 using System.IO;
 using System.Text;
 
+using NAudio.Utils;
+
 namespace NAudio.SoundFont 
 {
 	/// <summary>
